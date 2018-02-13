@@ -14,7 +14,7 @@ p {
 
 #centering {
   display: table;
-  margin: 17% auto;
+  /* margin: 17% auto; */
 }
 
 #letterOne, #letterTwo, #letterThree {
