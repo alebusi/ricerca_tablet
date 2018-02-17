@@ -132,7 +132,7 @@ function drawPoligon(targhet_canvas_id ,pos_x,pos_y , n_faces, outer_diameter, r
 	canvas_context.closePath(); // chiudiamo la forma
 	
 
-	canvas_context.lineWidth = 2; // spessore del filetto
+	canvas_context.lineWidth = 10; // spessore del filetto
 	canvas_context.fillStyle = colour; // colore di riempimento
 	canvas_context.fill();
 	canvas_context.strokeStyle = "#000000"; // colore del filetto
