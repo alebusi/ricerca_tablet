@@ -16,7 +16,7 @@ function generateVariables (){
 	diametro_costruzione_cerchio = 50; // grandezza cerchio centrale
 	rotazione = Math.random() *Math.PI/lati; // rotazione del poligono, "Math.PI/lati" serve per tenere le facce ortogonali alla finestra, "Math.random() *Math.PI*2" per una rotazione random
 	
-	colore_poligono= "#000000";
+	colore_poligono= "#FFFFFF";
 	colore_cerchio = "#FF3300";
 
 	pos_x =((Math.random() * 100) + 1 )/100; // posizione x e y random del poligono
@@ -133,9 +133,9 @@ function drawPoligon(targhet_canvas_id ,pos_x,pos_y , n_faces, outer_diameter, r
 	
 
 	canvas_context.lineWidth = 0; // spessore del filetto
-	canvas_context.fillStyle = "#FFFFFF"; // colore di riempimento
+	canvas_context.fillStyle = colour; // colore di riempimento
 	canvas_context.fill();
-	canvas_context.strokeStyle = colour; // colore del filetto
+	canvas_context.strokeStyle = "#FFFFFF"; // colore del filetto
     canvas_context.stroke();
 
 }
