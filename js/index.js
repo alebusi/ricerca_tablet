@@ -72,7 +72,7 @@ function drawCanvas() {
   
 }
 
-// window.resize event listener (aspetta che la fisnetra si ridimensioni e esegue drawCanvas() )
+// window.resize event listener (aspetta che la finestra si ridimensioni e esegue drawCanvas() )
 window.addEventListener('resize', function() {
     // clear the timeout
 	clearTimeout(timeout);
@@ -94,8 +94,8 @@ function drawPoligon(targhet_canvas_id ,pos_x,pos_y , n_faces, outer_diameter, r
 	
 	if (percent_pos){
 		// calcolo la posizione del poligono proporzionalmente alla dimensione del canvas pos_x e pos_y vanno da 0 a 1 (0.5 è il centro della pagina)
-		pos_x = targhet_canvas.width * pos_x;
-		pos_y = targhet_canvas.height * pos_y;
+		pos_x = targhet_canvas.width-outer_diameter * pos_x;
+		pos_y = targhet_canvas.height-outer_diameter * pos_y;
 	}
 
 	canvas_context.beginPath(); // inizia il disegno 
