@@ -14,7 +14,7 @@ function generateVariables (){
 	lati = getRandomInt(1, 6) ; // numro dei lati del poligono, se x < 3 verra diasegnato un cerchio, per una selezone random usare "getRandomInt(1, 8)"
 	diametro_costruzione_poligono = 100; // grandezza poligono 
 	diametro_costruzione_cerchio = 50; // grandezza cerchio centrale
-	rotazione = Math.random() *Math.PI/lati; // rotazione del poligono, "Math.PI/lati" serve per tenere le facce ortogonali alla finestra, "Math.random() *Math.PI*2" per una rotazione random
+	rotazione = Math.PI/lati; // rotazione del poligono, "Math.PI/lati" serve per tenere le facce ortogonali alla finestra, "Math.random() *Math.PI*2" per una rotazione random
 	
 	colore_poligono= "#000000";
 	colore_cerchio = "#FF3300";
@@ -80,6 +80,21 @@ window.addEventListener('resize', function() {
 	timeout = setTimeout(drawCanvas, delay);
 });
 
+function clamp(n, minn, maxn){
+// che limita il valore n entro min e max
+    if (n < minn){
+    	return minn;
+    }
+        
+    else if(n > maxn){
+    	return maxn;
+    }
+
+    else{
+        return n;
+    }
+
+}
 
 
 
@@ -94,8 +109,8 @@ function drawPoligon(targhet_canvas_id ,pos_x,pos_y , n_faces, outer_diameter, r
 	
 	if (percent_pos){
 		// calcolo la posizione del poligono proporzionalmente alla dimensione del canvas pos_x e pos_y vanno da 0 a 1 (0.5 è il centro della pagina)
-		pos_x = targhet_canvas.width * pos_x;
-		pos_y = targhet_canvas.height * pos_y;
+		pos_x = clamp (targhet_canvas.width * pos_x, outer_diameter/2,targhet_canvas.width-(outer_diameter/2) );
+		pos_y = clamp (targhet_canvas.height * pos_y, outer_diameter/2,targhet_canvas.height-(outer_diameter/2) );
 	}
 
 	canvas_context.beginPath(); // inizia il disegno 
