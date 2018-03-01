@@ -31,7 +31,7 @@ function generateVariables (){
 
 	targhet_canvas_id = "pageCanvas"; // il canvas in cui vogliamo disegnare
 	lati = getRandomInt(1, 6) ; // numro dei lati del poligono, se x < 3 verra diasegnato un cerchio, per una selezone random usare "getRandomInt(1, 8)"
-	diametro_costruzione_poligono = 100; // grandezza poligono 
+	diametro_costruzione_poligono = 150; // grandezza poligono 
 	diametro_costruzione_cerchio = 50; // grandezza cerchio centrale
 	rotazione = Math.PI/lati; // rotazione del poligono, "Math.PI/lati" serve per tenere le facce ortogonali alla finestra, "Math.random() *Math.PI*2" per una rotazione random
 	
@@ -210,7 +210,7 @@ function drawPoligon(targhet_canvas_id ,pos_x,pos_y , n_faces, outer_diameter, r
 	}
 	else{
 		// se le faccie sono meno di 3 disegno un cerchio https://www.w3schools.com/tags/ref_canvas.asp
-                canvas_context.lineWidth = 0; // spessore del filetto
+                canvas_context.lineWidth = 5; // spessore del filetto
 		canvas_context.arc (pos_x , pos_y , outer_diameter/2, 0, 2 * Math.PI, false);
 	}
 
