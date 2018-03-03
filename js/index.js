@@ -32,11 +32,11 @@ function generateVariables (){
 	targhet_canvas_id = "pageCanvas"; // il canvas in cui vogliamo disegnare
 	lati = getRandomInt(1, 6) ; // numro dei lati del poligono, se x < 3 verra diasegnato un cerchio, per una selezone random usare "getRandomInt(1, 8)"
 	diametro_costruzione_poligono = 150; // grandezza poligono 
-	diametro_costruzione_cerchio = 50; // grandezza cerchio centrale
+	diametro_costruzione_cerchio = 70; // grandezza cerchio centrale
 	rotazione = Math.PI/lati; // rotazione del poligono, "Math.PI/lati" serve per tenere le facce ortogonali alla finestra, "Math.random() *Math.PI*2" per una rotazione random
 	
 	colore_poligono= "#FFFFFF";  //"#000000";
-	colore_cerchio = "#FFFF00";  // blu "#0000E0";  //"#FF3300";
+	colore_cerchio = "#FFBF18";  // blu "#0000E0";  //"#FF3300";
 
 	pos_x =((Math.random() * 100) + 1 )/100; // posizione x e y random del poligono
 	pos_y = ((Math.random() * 100) + 1 )/100; 
