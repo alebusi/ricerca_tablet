@@ -3,10 +3,65 @@
 
 var pageCanvas = document.querySelector("#pageCanvas");
 
-pageCanvas.addEventListener("mousemove", updateDisplay, false);
-pageCanvas.addEventListener("mouseenter", updateDisplay, false);
-pageCanvas.addEventListener("mouseleave", updateDisplay, false);
+pageCanvas.addEventListener("mousemove", function(event){
+	mouseX = event.pageX;
+	mouseY = event.pageY;
+	updateDisplay();
+}, false);
+pageCanvas.addEventListener("mouseenter",  function(event){
+	mouseX = event.pageX;
+	mouseY = event.pageY;
+	updateDisplay();
+}, false);
+pageCanvas.addEventListener("mouseleave", function(event){
+	mouseX = event.pageX;
+	mouseY = event.pageY;
+	updateDisplay();
+}, false);
 pageCanvas.addEventListener("click", cliked, false);
+
+
+
+
+var modulo= 10;
+document.addEventListener('keydown', (event) => {
+
+    const keyName = event.key;
+
+    // funzione di controllo con tastiera
+    console.log(event.key)
+    switch(keyName) {
+        
+
+        case "ArrowDown":
+			mouseY = mouseY + modulo;
+			updateDisplay();
+            break;
+
+        case "ArrowUp":
+            mouseY = mouseY - modulo;
+            updateDisplay();
+            break;
+
+        case "ArrowLeft":
+          mouseX = mouseX - modulo;
+          updateDisplay();
+          break;
+    
+        case "ArrowRight":
+        	updateDisplay();
+            mouseX = mouseX + modulo;
+            break;
+        case " ":
+        	 cliked();
+           
+            break;
+    }
+
+});
+
+
+
 
 var mouseX = 0;
 var mouseY = 0;
@@ -49,9 +104,8 @@ drawCanvas(mouseX ,mouseY);
 
 
 
-function updateDisplay(event) {
-	mouseX = event.pageX;
-	mouseY = event.pageY;
+function updateDisplay() {
+	
 	drawCanvas(mouseX ,mouseY);
 }
 
