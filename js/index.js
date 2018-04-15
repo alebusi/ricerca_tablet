@@ -85,8 +85,8 @@ function generateVariables (){
 	// genero le variabili ogni volta che devo disegnare un poligono nuovo
 
 	targhet_canvas_id = "pageCanvas"; // il canvas in cui vogliamo disegnare
-	lati = 4; //getRandomInt(1, 4) ; // numro dei lati del poligono, se x < 3 verra diasegnato un cerchio, per una selezone random usare "getRandomInt(1, 8)"
-	diametro_costruzione_poligono = 75; // grandezza poligono 
+	lati = getRandomInt(2, 6) ; // numro dei lati del poligono, se x < 3 verra diasegnato un cerchio, per una selezone random usare "getRandomInt(1, 8)"
+	diametro_costruzione_poligono = 100; // grandezza poligono 
 	diametro_costruzione_cerchio = 35; // grandezza cerchio centrale
 	rotazione = Math.PI/lati; // rotazione del poligono, "Math.PI/lati" serve per tenere le facce ortogonali alla finestra, "Math.random() *Math.PI*2" per una rotazione random
 	
