@@ -242,7 +242,7 @@ function drawPoligon(targhet_canvas_id ,pos_x,pos_y , n_faces, outer_diameter, r
 	
 	if (n_faces > 2){
 		 // se le faccie sono 3 o più disengo un poligono regolare, i indica il vertice che sarà disegnato in ogni ciclo
-		canvas_context.lineWidth = 2; // spessore del filetto
+		canvas_context.lineWidth = 4; // spessore del filetto
 		var i = 0
 		while (i <= n_faces-1) {
 	
