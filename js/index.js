@@ -90,7 +90,7 @@ function generateVariables (){
 	diametro_costruzione_cerchio = 35; // grandezza cerchio centrale
 	rotazione = Math.PI/lati; // rotazione del poligono, "Math.PI/lati" serve per tenere le facce ortogonali alla finestra, "Math.random() *Math.PI*2" per una rotazione random
 	
-	colore_poligono= "#FFE118";  //"#000000";
+	colore_poligono= "#FFBF18";  //"#000000";
 	colore_cerchio = "#FF3300";  // blu "#0000E0";  //"#FF3300";
 
 	pos_x =((Math.random() * 100) + 1 )/100; // posizione x e y random del poligono
@@ -242,7 +242,7 @@ function drawPoligon(targhet_canvas_id ,pos_x,pos_y , n_faces, outer_diameter, r
 	
 	if (n_faces > 2){
 		 // se le faccie sono 3 o più disengo un poligono regolare, i indica il vertice che sarà disegnato in ogni ciclo
-		canvas_context.lineWidth = 1; // spessore del filetto
+		canvas_context.lineWidth = 2; // spessore del filetto
 		var i = 0
 		while (i <= n_faces-1) {
 	
@@ -264,7 +264,7 @@ function drawPoligon(targhet_canvas_id ,pos_x,pos_y , n_faces, outer_diameter, r
 	}
 	else{
 		// se le faccie sono meno di 3 disegno un cerchio https://www.w3schools.com/tags/ref_canvas.asp
-                canvas_context.lineWidth = 1; // spessore del filetto
+                canvas_context.lineWidth = 2; // spessore del filetto
 		canvas_context.arc (pos_x , pos_y , outer_diameter/2, 0, 2 * Math.PI, false);
 	}
 
