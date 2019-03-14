@@ -139,7 +139,7 @@ function cliked(){
     else{
     	var fail = new Audio('fail.wav');
 
-    	fail.play();
+    	/* fail.play(); */
 
 		
     }
